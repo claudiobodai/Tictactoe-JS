@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TikTakToe</title>
+    <link rel="stylesheet" href="stylesheet.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+</head>
+<body>
+    <div class="position-board">
+        <h1>TikTakToe Online</h1>
+        
+        <div id="rooms-section">
+            <h2>Seleziona una stanza</h2>
+            <div id="rooms-list">
+                <button class="room-btn" data-room="room1">Stanza 1</button>
+                <button class="room-btn" data-room="room2">Stanza 2</button>
+                <button class="room-btn" data-room="room3">Stanza 3</button>
+            </div>
+            <div id="create-room">
+                <input type="text" id="room-name" placeholder="Nome stanza" />
+                <button id="create-room-btn">Crea Stanza</button>
+            </div>
+        </div>
+        
+        <div id="nickname-container" style="display: block;">
+            <input type="text" id="nickname" placeholder="Inserisci il tuo nickname">
+            <button id="setNickname">Imposta il nickname</button>
+        </div>
+        
+        <div id="game-section" style="display: none;">
+            <p id="message">Iniziamo il gioco!</p>
+            
+            <div class="player-info">
+                <div id="player-display" style="display: none;">
+                    <span>Giocatore: </span><span id="player-nickname"></span>
+                    <span id="player-symbol"></span>
+                </div>
+            </div>
+                      
+            <div id="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            
+            <div class="game-controls">
+                <button id="ready">Pronto</button>
+                <button id="reset">Reset</button>
+                <button id="show-history">Storico Partite</button>
+                <button id="leave-room">Cambia Stanza</button>
+            </div>
+            
+            <div class="chat-container">
+                <div class="chat-messages" id="chat-messages"></div>
+                <div class="chat-input">
+                    <input type="text" id="chat-message" placeholder="Scrivi un messaggio..." />
+                    <button id="send-message"><i class="fas fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="history-container" style="display: none;">
+        <div class="history-content">
+            <div class="history-header">
+                <h2>Storico delle Partite</h2>
+                <button id="close-history" class="close-button">X</button>
+            </div>
+            <div id="history-list">
+            </div>
+        </div>
+    </div>
+    
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/js/rooms.js"></script>
+    <script src="/js/nickname.js"></script>
+    <script src="/js/game.js"></script>
+</body>
+</html>
