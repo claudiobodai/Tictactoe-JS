@@ -273,10 +273,6 @@ io.on('connection', (socket) => {
 
             if (currentRoom.players.length === 0) {
                 delete rooms[room];
-                
-                // Non cancellare lo storico quando una stanza si svuota
-                // Così quando un giocatore rientra può vedere lo storico precedente
-                // gameHistory[room] rimane intatto
             }
         }
     });
@@ -333,9 +329,6 @@ io.on('connection', (socket) => {
                 
                 if (currentRoom.players.length === 0) {
                     delete rooms[room];
-                    
-                    // Non cancelliamo lo storico quando la stanza si svuota
-                    // gameHistory[room] rimane intatto
                 }
             }
         }

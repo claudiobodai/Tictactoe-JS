@@ -245,11 +245,11 @@ function makeMove(index) {
     if (index < 0 || index > 8) return;
     
     // Controlla tutte le condizioni che potrebbero impedire la mossa
-    if (gameState.board[index] !== '' || // Cella già occupata
-        gameState.isGameOver || // Partita finita
-        gameState.playerSymbol !== gameState.currentPlayer || // Non è il tuo turno
-        gameState.players.length !== 2 || // Non ci sono abbastanza giocatori
-        !gameState.players.every(p => p.ready)) { // Non tutti i giocatori sono pronti
+    if (gameState.board[index] !== '' || 
+        gameState.isGameOver || 
+        gameState.playerSymbol !== gameState.currentPlayer || 
+        gameState.players.length !== 2 || 
+        !gameState.players.every(p => p.ready)) { 
         return;
     }
     
@@ -481,7 +481,7 @@ function setupChatMonitoring() {
                 }, 10);
             }
         });
-    }, 5000); // Controlla ogni 5 secondi
+    }, 5000); 
     
     // Aggiungi un listener per lo scroll della chat
     chatMessages.addEventListener('scroll', () => {
